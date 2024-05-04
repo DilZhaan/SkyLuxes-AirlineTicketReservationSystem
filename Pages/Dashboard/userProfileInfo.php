@@ -1,4 +1,5 @@
-<!--Dilshan Yapa S Y C T it23366572-->
+<!--G.M.M.Dissanayake It23360846-->
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -58,6 +59,11 @@
         </style>
     </head>
         <body>
+            <?php
+                include("../../config/dbConn.php");
+
+                
+            ?>
             <h1 class="headding"> Profile Information</h1>
             <div class="userDetailContainer">
                 <h2>User Details</h2>
