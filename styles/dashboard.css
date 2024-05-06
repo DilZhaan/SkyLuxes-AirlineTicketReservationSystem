@@ -44,12 +44,8 @@
 .linkList{
     list-style: none;
 }
-.linkList > a {
-    text-decoration: none;
-    color: #000;
-}
 
-.linkList > a > li {
+.linkList li {
     background-color: #fff;
     border-radius: 5px;
     padding: 10px;
@@ -58,15 +54,15 @@
     cursor: pointer;
     font-weight: 600;
     color: black;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 10px rgba(30, 113, 54, 0.2);
 }
 
-.linkList > a > li:hover {
+.linkList li:hover {
     border: 0.5px solid #474fc6a1;
     box-shadow: 0 5px 10px rgba(197, 101, 101, 0.488);
 }
 
-#content{
+.content {
     max-width: calc(100% - 320px);
     width: 100%;
 }
