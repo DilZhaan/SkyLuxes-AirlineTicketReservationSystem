@@ -23,21 +23,32 @@ BJS PERERA -->
 
 
     <div class="container">
-        <div class="SearchFlightsForm">
+    
+        
+        <div class="bannerJ">
+        <section id="hbanner1">
+        <div class="SearchFlightsForm" style="background-color:rgba(255,255,255,0.8);">
             <span>Reserve Your Seat</span>
             <div class="form-div">
                 <form method="POST">
 
                     <div class="form-elements">
-                        <input type="text" name="DepartureAirport" id="DepartureAirport" placeholder="From">
+                    <select name="DepartureAirport" id="DepartureAirport" required>
+                            <option disabled selected value> From </option>
+                            <?php include "../Process/readAirportWIthoutDesable.php"?>
+
+                    </select>
 
                         <input type="date" id="DayToGo" name="DayToGo" placeholder="Departure Date">
                         <input type="date" id="DayToCome" name="DayToCome" placeholder="Arrival Date">
                     </div>
                     <div class="form-elements">
-                        <input type="text" name="ArrivalAirport" id="flightNametinationAirport" placeholder="To">
+                        <select name="ArrivalAirport" id="ArrivalAirport" required>
+                            <option disabled selected value> To </option>
+                            <?php include "../Process/readAirportWIthoutDesable.php"?>
+                        </select>
 
-                        <select name="SeatCount" id="SeatCount">
+                        <select name="SeatCount" id="SeatCount" required>
                             <option disabled selected value> Seat Count </option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -51,7 +62,7 @@ BJS PERERA -->
                             <option value="10">10</option>
                         </select>
 
-                        <select name="SeatClass" id="SeatClass">
+                        <select name="SeatClass" id="SeatClass" required>
                             <option disabled selected value> Class </option>
                             <option value="economy">Economy</option>
                             <option value="pre-economy">Premium-Economy</option>
@@ -68,7 +79,9 @@ BJS PERERA -->
                         </div>
 
                     </div>
-                    <button class="btn-search" type="submit" name="submit">Search</button>
+                    <div class="sbmitbtn">
+                        <button class="btn-search" type="submit" name="submit">Search</button>
+                    </div>
                 </form>
             </div>
             <br>
@@ -118,7 +131,9 @@ BJS PERERA -->
 
                         if ($final_result) {
                             if (mysqli_num_rows($final_result) > 0) {
-                                echo '<thead>
+                                echo '
+                                <div class="flights">
+                                <thead>
                                 <tr>
                                     <th>Flight ID</th>
                                     <th>Name</th>
@@ -126,8 +141,6 @@ BJS PERERA -->
                                     <th>Arrival Date And Time</th>
                                     <th>Status</th>
                                     <th>AirCraft</th>
-                                    <th>Departure AirPort Name</th>
-                                    <th>Arrival AirPort Name</th>
                                 </tr>
                                 </thead>';
 
@@ -140,12 +153,12 @@ BJS PERERA -->
                                     <td>' . $row['Arrival_DateTime'] . '</td>
                                     <td>' . $row['Status'] . '</td>
                                     <td>' . $row['AirCraft_ID'] . '</td>
-                                    <td>' . $dairportName . '</td>
-                                    <td>' . $aairportName . '</td>
 
 
                                 </tr>
-                                </tbody>';
+                                </tbody>
+                                </div>
+                                ';
 
                                 $rflightId = $row['Flight_ID'];
                                 $rflightname = $row['Name'];
@@ -166,6 +179,8 @@ BJS PERERA -->
                 </table>
             </div>
         </div>
+        </section>
+    </div>
     </div>
 
 
