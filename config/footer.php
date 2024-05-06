@@ -11,7 +11,7 @@
 </head>
 <body>
 <footer class="section-p1">
-        <div class="footerT">
+        <div class="col">
             <img src='http://localhost/SkyLuxes-AirlineTicketReservationSystem/images/logo.png' alt="logo" id="logo">
             <p id="footerTopics">Contact</p>
             <p><strong>Contact: </strong>07712234432 / 076544321</p>
@@ -31,17 +31,20 @@
             </div>
         </div>
 
-        <div class="footerT">
+        <div class="col">
 
             <p id="footerTopics">About</p>
-            <a href="#">About us</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms & Conditions</a>
-            <a href="#">Contact Us</a>
+            <a href="http://localhost/SkyLuxes-AirlineTicketReservationSystem/Pages/AboutUs.php">About us</a>
+            <a href="http://localhost/SkyLuxes-AirlineTicketReservationSystem/Pages/privacypolicy.php">Privacy Policy</a>
+            <a href="http://localhost/SkyLuxes-AirlineTicketReservationSystem/Pages/termsCondition.php">Terms & Conditions</a>
+            <a href="http://localhost/SkyLuxes-AirlineTicketReservationSystem/Pages/contactUs.php">Contact Us</a>
+            <a href="http://localhost/SkyLuxes-AirlineTicketReservationSystem/Pages/generalNotice.php">General Notices</a>
+            <a href="http://localhost/SkyLuxes-AirlineTicketReservationSystem/Pages/legalNotice.php">Legal Notices</a>
+            <a href="">General Notices</a>
 
         </div>
 
-        <div class="footerT">
+        <div class="col">
 
             <p id="footerTopics">My Account</p>
             <a href="#">My Account</a>
@@ -50,21 +53,21 @@
 
         </div>
 
-        <div class="footerT install">
+        <div class="col install">
 
             <p id="footerTopics">Install App</p>
             <p>From App Store or Google play</p>
             <div class="row">
 
-                <img src="http://localhost/SkyLuxes-AirlineTicketReservationSystem/images/app.jpg" alt="">
-                <img src="http://localhost/SkyLuxes-AirlineTicketReservationSystem/images/play.jpg" alt="">
+                <img src="../images/app.jpg" alt="">
+                <img src="../images/play.jpg" alt="">
 
             </div>
             <p id="footerTopics">Secured Payment Gateways </p>
-            <img src="http://localhost/SkyLuxes-AirlineTicketReservationSystem/images/pay.png" alt="">
+            <img src="../images/pay.png" alt="">
 
             <div class="subscribeMail">
-                            <form method="post" action="">
+                            <form method="post" action="../Process/subscribe.php">
                             <span>SUBSCRIBE TO OUR SPECIAL OFFERS<br></span>
                             <input type="text" name="submail" placeholder="Email Address">
                             <input type="submit" name="submit">
