@@ -1,4 +1,4 @@
-
+<!--IT23365346  BJS PERERA-->
 
 <?php
 error_reporting(E_ALL);
@@ -28,11 +28,11 @@ if (isset($_POST['save_btn'])){
 
     if ($result) {
         $_SESSION['status'] = "User added.";
-    }else{
-        $_SESSION['status'] = "User Cannot be added.";
+        echo "<script> if(window.confirm('User Added.')){document.location = 'usermanagementj.php';}</script>";
+    } else {
+        $_SESSION['status'] = "Error Occured Try Again!.";
+        echo "<script>alert('Error Occurred. Please try again.');</script>";
     }
-
-    header('Location:usermanagementj.php');
 
 
 
@@ -51,15 +51,14 @@ if (isset($_POST['updateBtn'])){
     $update_sql = "UPDATE user SET firstname = '$fname', lastname = '$lname', address='$address', mobile = '$mobile', email = '$email', password='$password', is_admin = '$is_admin' where username = '$user_name'";
     $update_result = mysqli_query($conn,$update_sql);
 
-    if($update_result){
-        $_SESSION['status'] = "User Updated.";
-    }else{
-        $_SESSION['status'] = "User Cannot be Updated.";
+    if ($update_result) {
+        $_SESSION['status'] = "User details Updated.";
+        echo "<script> if(window.confirm('User Updated.')){document.location = 'usermanagementj.php';}</script>";
+    } else {
+        $_SESSION['status'] = "Error Occured Try Again!.";
+        echo "<script>alert('Error Occurred. Please try again.');</script>";
     }
-
-    header('Location:usermanagementj.php');
 }
-
 if (isset($_POST['removeBtn'])){
 
     $user_name = $_POST['username'];
