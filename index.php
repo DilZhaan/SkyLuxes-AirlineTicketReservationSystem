@@ -47,15 +47,15 @@
                             <option disabled selected value> From </option>
                             <?php
                                 include("config/dbConn.php");
-                                $sql = "SELECT Airport_ID,Name FROM airport ORDER BY Name;";
+                                $sql = "SELECT Airport_ID,Airport_Name FROM airport ORDER BY Airport_Name;";
                                 $result = mysqli_query($conn,$sql);
                                 
                                 if ($result->num_rows > 0) {
                                     while ($row = $result->fetch_assoc()) {
-                                        echo "<option value=\"".$row['Airport_ID']."\">".$row['Name']."</option>";
+                                        echo "<option value=\"".$row['Airport_ID']."\">".$row['Airport_Name']."</option>";
                                     }
                                 }else {
-                                    echo "<option value=\"".$row['Name']."\" disabled selected value>".$row['Name']."</option>";
+                                    echo "<option value=\"".$row['Airport_Name']."\" disabled selected value>".$row['Airport_Name']."</option>";
                                 }
                             ?>
                         </select>
@@ -67,15 +67,15 @@
                             <option disabled selected value> To </option>
                             <?php
                                 include("config/dbConn.php");
-                                $sql = "SELECT Airport_ID,Name FROM airport ORDER BY Name;";
+                                $sql = "SELECT Airport_ID,Airport_Name FROM airport ORDER BY Airport_Name;";
                                 $result = mysqli_query($conn,$sql);
                                 
                                 if ($result->num_rows > 0) {
                                     while ($row = $result->fetch_assoc()) {
-                                        echo "<option value=\"".$row['Airport_ID']."\">".$row['Name']."</option>";
+                                        echo "<option value=\"".$row['Airport_ID']."\">".$row['Airport_Name']."</option>";
                                     }
                                 }else {
-                                    echo "<option value=\"".$row['Name']."\" disabled selected value>".$row['Name']."</option>";
+                                    echo "<option value=\"".$row['Airport_Name']."\" disabled selected value>".$row['Airport_Name']."</option>";
                                 }
                             ?>
                         </select>
@@ -105,11 +105,12 @@
                             <input type="radio" id="TripType2" value="Returm" name="TripType" checked="checked">
                             <lable id="TripType2">Return</lable>
                         </div>
-                        <input type="Submit" id="Search" value="Search">
+                        <input type="submit" id="Search" value="Search" name="submit">
                     </div>
                 </form>
             </div>
         </div>
+
         <div class="body-content">
             <div class="contactus">
                 <div class="support" onclick="">
